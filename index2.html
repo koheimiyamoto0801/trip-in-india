@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Trip in India</title>
+    <link rel="stylesheet" href="trip-in-india_top.css">
+    <script type="text/javascript">
+      var flag = 1;
+      function changePictures(){
+        if(flag == 1){
+          document.pic1.src = 'd2agra_5.JPG';
+          flag = 2;
+        }else if(flag == 2){
+          document.pic1.src = 'd2agra_91.JPG';
+          flag = 3;
+        }else if (flag == 3){
+          document.pic1.src = 'd2agra_176.JPG';
+          flag = 4;
+        }else if(flag == 4){
+          document.pic1.src = 'd3agra&pushkar_31.JPG';
+          flag = 5;
+        }else if (flag == 5){
+          document.pic1.src = 'd3agra&pushkar_44.JPG';
+          flag = 6;
+        }else if(flag == 6){
+          document.pic1.src = 'd8jaisalmer_17.JPG';
+          flag = 7;
+        }else if (flag == 7){
+          document.pic1.src = 'd9jaisakmer_65.JPG';
+          flag = 1;
+        }
+        setTimeout('changePictures()', 3000)
+      }
+
+      function tokei(){
+        var nitiji, ji, fun, byo, jikoku;
+        nitiji = new Date();
+        ji = nitiji.getHours();
+        fun = nitiji.getMinutes();
+        byo = nitiji.getSeconds();
+        jikoku = ji + '\˚' + fun + '\'' + byo + '\"';
+        document.fo1.te1.value = jikoku;
+        setTimeout('tokei()', 1000);
+      }
+
+      function indiatokei(){
+
+        var d = new Date();
+        var localTime = d.getTime();
+        var localOffset = d.getTimezoneOffset() * 60000;
+        var utc = localTime + localOffset;
+        var offset = -3.5;
+        var result = utc - (3600000 * offset);
+        d = new Date(result);
+
+        var nitiji, ji, fun, byo, jikoku;
+        nitiji = new Date(result);
+        ji = nitiji.getHours();
+        fun = nitiji.getMinutes();
+        byo = nitiji.getSeconds();
+        jikoku = ji + '\˚' + fun + '\'' + byo + '\"';
+        document.fo2.te2.value = jikoku;
+        setTimeout('indiatokei()', 1000);
+      }
+
+    </script>
+  </head>
+  <body onLoad = 'changePictures()'>
+  	<div class = 'left'>
+  		<h1>[ Index ]</h1>
+
+      <br><br><br><br>
+      <a href="trip-in-india_agra.html">Agra</a>
+      <br><br><br><br><br><br><br><br>
+      <a href="trip-in-india_pushkar.html">Pushkar</a>
+      <br><br><br><br><br><br><br><br>
+      <a href="trip-in-india_jaisalmer.html">Jaisalmer</a> 
+           
+  	</div>
+  	<div class = 'right'>
+      <br><br><input type="button" value = "En => Jp" onclick=" if(confirm('Do you want to translate this page into Japanese?') == true) location.href='index.html'">
+      <form name = 'fo1'>
+        <span><br><br>Tokyo:<br></span>
+        <input type="text" name="te1" size = '7'>
+        <script type="text/javascript">
+          tokei();
+        </script>
+      </form>
+      <form name = 'fo2'>
+        <span><br><br>India:<br></span>
+        <input type="text" name="te2" size = '7'>
+        <script type="text/javascript">
+          indiatokei();
+        </script>
+      </form>
+
+      <p>The number of visitors to this page:</p>
+      <img src = "/~c8004205/cgi-bin/npc.cgi"><br><br><br>
+      <A HREF="/~c8004205/cgi-bin/yybbs.cgi">Bulletin Board</A>
+
+      <p>Author:<br>K Miyamoto</p>
+      <p>Created date:<br>2018, 12, 09</p>
+
+  	</div>
+    <div class = 'middle'>
+      <h1>Trip in India</h1>
+
+      <p>This is a small web page sharing my experience of traveling throghout India.</p>
+      <p>I hope you will enjoy and feel atomosphere in India a bit:)</p>
+      <p>Sincerely, K Miyamoto</p>
+
+
+      <div class = topPicture>
+
+        <img src="d2agra_5.JPG" name = 'pic1'>
+        
+      </div>
+    </div>
+    <footer>
+      
+    </footer>
+  </body>
+  </html>

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+div{
+	text-align: center;
+}
+
+body{
+	margin: 0;
+}
+
+.left{
+	color: white;
+	float: left;
+	margin: 0;
+	background-color: orange;
+	background-size: cover;
+	width: 20%;
+	height: 1000px;
+	font-family: Lobster;
+}
+
+.left a{
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.right{
+	float: right;
+	margin: 0;
+	background-color: green;
+	background-size: cover;
+	width: 20%;
+	height: 1000px;
+	color: white;
+}
+
+.right a{
+	color: white;
+	padding: 20px 0;
+	font-weight: bold;
+}
+
+.right p{
+	padding: 20px 0;
+}
+
+.right form{
+	padding: 20px 0;
+}
+
+.middle h1 {
+	margin: 0;
+	font-size: 45px;
+	padding: 30px;
+	font-family: Lobster;
+}
+
+.topPicture img{
+	width: 50%;
+	height: 50%;
+	padding: 30px;
+}
+
+.options img{
+	width: 10%;
+	height: 10%;
+	padding:10px;
+	padding-top: 20px;
+}
+
+.chosenPicture img{
+	width: 35%;
+	height: 35%;
+}
+
+.span span{
+	padding: 0 40px;
+}
+
+.span2 span{
+	padding: 20px;
+}
+
+.right input{
+	padding: 5px;
+}

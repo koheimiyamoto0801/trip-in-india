@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Trip in Pushkar</title>
+    <link rel="stylesheet" href="trip-in-india_top_ja.css">
+    <script type="text/javascript">
+
+      function tokei(){
+        var nitiji, ji, fun, byo, jikoku;
+        nitiji = new Date();
+        ji = nitiji.getHours();
+        fun = nitiji.getMinutes();
+        byo = nitiji.getSeconds();
+        jikoku = ji + '時' + fun + '分' + byo + '秒';
+        document.fo1.te1.value = jikoku;
+        setTimeout('tokei()', 1000);
+      }
+
+      function indiatokei(){
+
+        var d = new Date();
+        var localTime = d.getTime();
+        var localOffset = d.getTimezoneOffset() * 60000;
+        var utc = localTime + localOffset;
+        var offset = -3.5;
+        var result = utc - (3600000 * offset);
+        d = new Date(result);
+
+        var nitiji, ji, fun, byo, jikoku;
+        nitiji = new Date(result);
+        ji = nitiji.getHours();
+        fun = nitiji.getMinutes();
+        byo = nitiji.getSeconds();
+        jikoku = ji + '時' + fun + '分' + byo + '秒';
+        document.fo2.te2.value = jikoku;
+        setTimeout('indiatokei()', 1000);
+      }
+
+    </script>
+  </head>
+
+  <body>
+  	<div class = 'left'>
+  		<h1>[ 目次 ]</h1>
+
+      <br><br><br><br>
+      <a href="index.html">トップへ</a>
+      <br><br><br><br><br><br><br><br>
+      <a href="trip-in-india_agra_ja.html">アグラ</a>
+      <br><br><br><br><br><br><br><br>
+      <a href="trip-in-india_jaisalmer_ja.html">ジャイサルメール</a> 
+           
+  	</div>
+  	<div class = 'right'>
+      <br><br><input type="button" value = "日→英" onclick=" if(confirm('このページを英語に翻訳しますか？') == true) location.href='trip-in-india_pushkar.html'">
+      <form name = 'fo1'>
+        <span><br><br>東京：<br></span>
+        <input type="text" name="te1" size = '11'>
+        <script type="text/javascript">
+          tokei();
+        </script>
+      </form>
+      <form name = 'fo2'>
+        <span><br><br>インド：<br></span>
+        <input type="text" name="te2" size = '11'>
+        <script type="text/javascript">
+          indiatokei();
+        </script>
+      </form>
+
+      <p>このページへの来客数：</p>
+      <img src = "/~c8004205/cgi-bin/npc.cgi"><br><br><br>
+      <A HREF="/~c8004205/cgi-bin/yybbs.cgi">掲示板</A>
+
+      <p>作者：宮本</p>
+      <p>作成日<br>2018年12月09日</p>
+
+  	</div>
+    <div class = 'middle'>
+      <h1>プシュカル旅行記</h1>
+
+      <p>プシュカルは「ヒンドゥー教徒の聖地」と呼ばれる都市。</p>
+      <p>その静かで平和で厳かな空気は他のインドの都市とはまた異なる不思議な都市。</p>
+      <p>インドカレーを食べ、チャイを飲み、インド人の生活を満喫しました。</p>
+
+
+      <div class = 'options'>
+
+        <img src="d3agra&pushkar_26.JPG" onClick = "document.chosen.src = 'd3agra&pushkar_26.JPG'" >
+        <img src="d3agra&pushkar_31.JPG" onClick = "document.chosen.src = 'd3agra&pushkar_31.JPG'" >
+        <img src="d3agra&pushkar_44.JPG" onClick = "document.chosen.src = 'd3agra&pushkar_44.JPG'" >
+      <div class = 'span'>
+        <span>一杯のチャイ</span>
+        <span>チャンドバオリ</span>
+        <span>インドカレー</span>
+      </div>
+      <div class = 'chosenPicture'>
+        <img src="d3agra&pushkar_26.JPG" name = 'chosen'>
+        <p>(2018年9月14日撮影)</p>
+      </div>
+    </div>
+    <footer>
+      
+    </footer>
+  </body>
+  </html>

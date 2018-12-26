@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Trip in India</title>
+    <link rel="stylesheet" href="trip-in-india_top_ja.css">
+    <script type="text/javascript">
+      var flag = 1;
+      function changePictures(){
+        if(flag == 1){
+          document.pic1.src = 'd2agra_5.JPG';
+          flag = 2;
+        }else if(flag == 2){
+          document.pic1.src = 'd2agra_91.JPG';
+          flag = 3;
+        }else if (flag == 3){
+          document.pic1.src = 'd2agra_176.JPG';
+          flag = 4;
+        }else if(flag == 4){
+          document.pic1.src = 'd3agra&pushkar_31.JPG';
+          flag = 5;
+        }else if (flag == 5){
+          document.pic1.src = 'd3agra&pushkar_44.JPG';
+          flag = 6;
+        }else if(flag == 6){
+          document.pic1.src = 'd8jaisalmer_17.JPG';
+          flag = 7;
+        }else if (flag == 7){
+          document.pic1.src = 'd9jaisakmer_65.JPG';
+          flag = 1;
+        }
+        setTimeout('changePictures()', 3000)
+      }
+
+      function tokei(){
+        var nitiji, ji, fun, byo, jikoku;
+        nitiji = new Date();
+        ji = nitiji.getHours();
+        fun = nitiji.getMinutes();
+        byo = nitiji.getSeconds();
+        jikoku = ji + '時' + fun + '分' + byo + '秒';
+        document.fo1.te1.value = jikoku;
+        setTimeout('tokei()', 1000);
+      }
+
+      function indiatokei(){
+
+        var d = new Date();
+        var localTime = d.getTime();
+        //getTimeはグリニッジ標準時をもとに日本（というよりそのPCの設定されている地域の時間を）ミリ秒単位で取得するメソッド
+        var localOffset = d.getTimezoneOffset() * 60000;
+        //getTimezoneOffsetはその標準時からその国の時差の分だけ分単位で取得するメソッド。
+        //60000は60秒*1000ミリ秒で分単位をミリ秒単位に変換している。
+        var utc = localTime + localOffset;
+        //上の二つを足すことで、時差の影響を受けない標準時をここで作っている
+        var offset = -3.5;
+        //そこから自国から見た時差を計算している。今回はインドだから3.5時間
+        var result = utc - (3600000 * offset);
+        //しかし単位はミリ秒単位だから60h*60min*60sec*1000msecで単位を揃えている
+        d = new Date(result);
+        //それをnew Dateの引数に入れている。
+        //newDateはその国の時差を考慮した時差で時間が設定されているためこの段階でnewDate(result)はインドの時間を示している。
+        //あとは下のコードで自動的に３.５時間の時差を考慮して計算してくれるようになる。  
+
+        var nitiji, ji, fun, byo, jikoku;
+        nitiji = new Date(result);
+        ji = nitiji.getHours();
+        fun = nitiji.getMinutes();
+        byo = nitiji.getSeconds();
+        jikoku = ji + '時' + fun + '分' + byo + '秒';
+        document.fo2.te2.value = jikoku;
+        setTimeout('indiatokei()', 1000);
+      }
+
+    </script>
+  </head>
+  <body onLoad = 'changePictures()'>
+  	<div class = 'left'>
+  		<h1>[ 目次 ]</h1>
+
+      <br><br><br><br>
+      <a href="trip-in-india_agra_ja.html">アグラ</a>
+      <br><br><br><br><br><br><br><br>
+      <a href="trip-in-india_pushkar_ja.html">プシュカル</a>
+      <br><br><br><br><br><br><br><br>
+      <a href="trip-in-india_jaisalmer_ja.html">ジャイサルメール</a> 
+           
+  	</div>
+  	<div class = 'right'>
+      <br><br><input type="button" value = "日→英" onclick=" if(confirm('このページを英語に翻訳しますか？') == true) location.href='index2.html'">
+      <form name = 'fo1'>
+        <span><br><br>東京：<br></span>
+        <input type="text" name="te1" size = '11'>
+        <script type="text/javascript">
+          tokei();
+        </script>
+      </form>
+      <form name = 'fo2'>
+        <span><br><br>インド：<br></span>
+        <input type="text" name="te2" size = '11'>
+        <script type="text/javascript">
+          indiatokei();
+        </script>
+      </form>
+
+      <p>このページへの来客数：</p>
+      <img src = "/~c8004205/cgi-bin/npc.cgi"><br><br><br>
+      <A HREF="/~c8004205/cgi-bin/yybbs.cgi">掲示板</A>
+
+      <p>作者：宮本</p>
+      <p>作成日<br>2018年12月09日</p>
+
+    </div>
+    <div class = 'middle'>
+      <h1>インド旅行記</h1>
+
+      <p>これは僕のインドに旅行した思い出を写真と共に綴ったものです。</p>
+      <p>この作品を通してみなさんが少しでもインドを感じられたら幸いです。</p>
+      <p>宮本航平</p>
+
+
+      <div class = topPicture>
+
+        <img src="d2agra_5.JPG" name = 'pic1'>
+        
+      </div>
+    </div>
+    <footer>
+      
+    </footer>
+  </body>
+  </html>
