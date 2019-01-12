@@ -52,15 +52,15 @@
         //getTimezoneOffsetはその標準時からその国の時差の分だけ分単位で取得するメソッド。
         //60000は60秒*1000ミリ秒で分単位をミリ秒単位に変換している。
         var utc = localTime + localOffset;
-        //上の二つを足すことで、時差の影響を受けない標準時をここで作っている
-        var offset = -3.5;
-        //そこから自国から見た時差を計算している。今回はインドだから3.5時間
-        var result = utc - (3600000 * offset);
+        //上の二つを足すことで、時差の影響を受けない世界標準時をここで作っている
+        var offset = 5.5;
+        //そこから世界標準時から見た時差を計算している。今回はインドだから5.5時間
+        var result = utc + (3600000 * offset);
         //しかし単位はミリ秒単位だから60h*60min*60sec*1000msecで単位を揃えている
         d = new Date(result);
         //それをnew Dateの引数に入れている。
         //newDateはその国の時差を考慮した時差で時間が設定されているためこの段階でnewDate(result)はインドの時間を示している。
-        //あとは下のコードで自動的に３.５時間の時差を考慮して計算してくれるようになる。  
+        //あとは下のコードで自動的に5.５時間の時差を考慮して計算してくれるようになる。
 
         var nitiji, ji, fun, byo, jikoku;
         nitiji = new Date(result);
@@ -83,8 +83,8 @@
       <br><br><br><br><br><br><br><br>
       <a href="trip-in-india_pushkar_ja.html">プシュカル</a>
       <br><br><br><br><br><br><br><br>
-      <a href="trip-in-india_jaisalmer_ja.html">ジャイサルメール</a> 
-           
+      <a href="trip-in-india_jaisalmer_ja.html">ジャイサルメール</a>
+
   	</div>
   	<div class = 'right'>
       <br><br><input type="button" value = "日→英" onclick=" if(confirm('このページを英語に翻訳しますか？') == true) location.href='index2.html'">
@@ -122,11 +122,11 @@
       <div class = topPicture>
 
         <img src="d2agra_5.JPG" name = 'pic1'>
-        
+
       </div>
     </div>
     <footer>
-      
+
     </footer>
   </body>
   </html>
